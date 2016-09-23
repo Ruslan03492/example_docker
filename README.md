@@ -15,9 +15,3 @@ _scripts_ - devops related scripts
 ## Local development usage
 
 Use `cd scripts && ./up.sh` to run docker containers and install site.
-
-## Staging and Live deployment
-
-Copy **trusted.conf.dist** to **trusted.conf** and add trusted domain patterns.
-
-TBD
