@@ -1,0 +1,7 @@
+.idea
+/drupal
+/db
+/build/docker/trusted.conf
+/build/docker/access.conf
+node_modules
+node_modules/*

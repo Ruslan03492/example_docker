@@ -1,0 +1,59 @@
+name: Example Profile
+type: profile
+description: 'Example Profile application installation profile'
+core: 8.x
+version: VERSION
+
+dependencies:
+  - automated_cron
+  - block
+  - block_content
+  - breakpoint
+  - ckeditor
+  - color
+  - comment
+  - config
+  - contact
+  - contextual
+  - datetime
+  - dblog
+  - dynamic_page_cache
+  - editor
+  - field
+  - field_ui
+  - file
+  - filter
+  - help
+  - history
+  - image
+  - link
+  - menu_link_content
+  - menu_ui
+  - node
+  - options
+  - page_cache
+  - path
+  - quickedit
+  - rdf
+  - rest
+  - search
+  - serialization
+  - shortcut
+  - system
+  - taxonomy
+  - telephone
+  - text
+  - toolbar
+  - tour
+  - update
+  - user
+  - views
+  - views_ui
+# Contrib modules.
+  - admin_toolbar
+  - config_update
+  - ctools
+  - field_collection
+
+#themes:
+#  - adminimal

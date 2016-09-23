@@ -1,0 +1,51 @@
+diff --git a/.htaccess b/.htaccess
+index 4716fa1..61f079f 100644
+--- a/.htaccess
++++ b/.htaccess
+@@ -177,6 +177,13 @@ AddEncoding gzip svgz
+       # Force proxies to cache gzipped & non-gzipped css/js files separately.
+       Header append Vary Accept-Encoding
+     </FilesMatch>
++
++    <IfModule mod_deflate.c>
++      # Turn on gzip compression.
++      <FilesMatch "\.(js|css|html|htm|php|xml|woff|eot|svg|ttf)$">
++        SetOutputFilter DEFLATE
++      </FilesMatch>
++    </IfModule>
+   </IfModule>
+ </IfModule>
+
+diff --git a/composer.json b/composer.json
+index d9c5d7c..ad1d54b 100644
+--- a/composer.json
++++ b/composer.json
+@@ -10,6 +10,12 @@
+     "replace": {
+         "drupal/core": "~8.1"
+     },
++    "repositories": [
++        {
++            "type": "composer",
++            "url": "https://packagist.drupal-composer.org"
++        }
++    ],
+     "minimum-stability": "dev",
+     "prefer-stable": true,
+     "config": {
+@@ -23,11 +29,13 @@
+         ],
+         "merge-plugin": {
+             "include": [
+-                "core/composer.json"
++                "core/composer.json",
++                "modules/*/composer.json",
++                "profiles/*/modules/*/composer.json"
+             ],
+             "recurse": false,
+             "replace": false,
+-            "merge-extra": false
++            "merge-extra": true
+         }
+     },
+     "autoload": {
