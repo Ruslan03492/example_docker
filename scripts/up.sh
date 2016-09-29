@@ -30,7 +30,7 @@ docker exec -it docker_example_1 composer config --global github-oauth.github.co
 docker exec -it docker_example_1 composer update
 echo 'update composer: completed'
 
-docker exec -it docker_example_1 drush si yourmd_profile --site-name="Example Docker" --db-url=mysql://d8:d8@mysql/d8 --account-pass=admin -y
+docker exec -it docker_example_1 drush si example_profile --site-name="Example Docker" --db-url=mysql://d8:d8@mysql/d8 --account-pass=admin -y
 echo 'si example_profile: completed'
 
 # Run postfix.
